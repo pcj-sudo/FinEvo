@@ -6,7 +6,7 @@
 
 [English](README.md) · **简体中文**
 
-[快速开始](#快速开始) · [浏览 10 道任务](examples/dcf/tasks/) · [自主造题](generation/README.md) · [训练智能体](training/README.md)
+[阅读论文（PDF）](paper/FinEvo.pdf) · [快速开始](#快速开始) · [浏览 10 道任务](examples/dcf/tasks/) · [自主造题](generation/README.md) · [训练智能体](training/README.md)
 
 **让模型参与创造自己接下来要学习的挑战。**
 

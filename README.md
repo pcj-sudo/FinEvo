@@ -6,7 +6,7 @@
 
 **English** · [简体中文](README.zh-CN.md)
 
-[Quick start](#quick-start) · [Explore the 10 tasks](examples/dcf/tasks/) · [Generate challenges](generation/README.md) · [Train the agent](training/README.md)
+[Read the paper (PDF)](paper/FinEvo.pdf) · [Quick start](#quick-start) · [Explore the 10 tasks](examples/dcf/tasks/) · [Generate challenges](generation/README.md) · [Train the agent](training/README.md)
 
 **The model helps create the challenges it learns from.**
 
