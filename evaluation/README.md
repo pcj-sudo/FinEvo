@@ -1,6 +1,6 @@
 # Evaluation
 
-From the repository root:
+From the repository root, set `LLM_BASE_URL` and `LLM_API_KEY` for the OpenAI-compatible model endpoint (see the root README):
 
 ```bash
 rsi-eval --root evaluation --config configs/openhands.json --job-name dcf-example --model openai/Qwen3.6-27B
