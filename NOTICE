@@ -1,0 +1,9 @@
+FinEvo
+
+This repository includes a pinned and locally adapted Slime runtime under
+training/backend/slime. Its upstream license is retained there.
+Upstream project: https://github.com/THUDM/slime
+Revision: 5bae5bb7928d65906e24e99f5b5d3f99a4daaf93
+
+Harbor, OpenHands, Qwen model weights, Megatron-LM and container images are
+separate dependencies distributed under their respective terms.

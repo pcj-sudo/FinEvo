@@ -1,0 +1,10 @@
+{
+  "gateway_url": "http://127.0.0.1:18001",
+  "concurrency": 64,
+  "agent_timeout_sec": 1800,
+  "harbor_environment": {
+    "type": "docker"
+  },
+  "checkpoint_evaluation": false,
+  "agent_image": "sha256:REPLACE_WITH_YOUR_LOCAL_RUNTIME_IMAGE_ID"
+}

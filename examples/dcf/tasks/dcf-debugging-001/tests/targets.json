@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "cells": [
+    {
+      "sheet": "Calcs",
+      "cell": "G13"
+    },
+    {
+      "sheet": "Calcs",
+      "cell": "F27"
+    },
+    {
+      "sheet": "DCF",
+      "cell": "E16"
+    },
+    {
+      "sheet": "DCF",
+      "cell": "F9"
+    }
+  ]
+}

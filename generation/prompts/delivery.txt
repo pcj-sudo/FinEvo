@@ -1,0 +1,57 @@
+实现交付约定（具体文件与最终 schema 优先于上文的概念字段名称）：
+1. 所有 artifacts 路径相对于工作根目录。本轮结果存放于公共指令给出的产物目录。
+2. 清洗内部交付 reference.xlsx、rules.md、build.py、check.py；只有 reference.xlsx
+   传给新任务的造题者，其他文件及脱敏映射仅供清洗核验。build.py 支持
+   --materials <本轮 inputs 目录> --output <空目录>，从原始材料重放，生成 reference.xlsx。
+   返修代码也必须可从原始材料重放，必要的辅助文件一并放在 build.py 同目录。
+3. 构造/加难/题目修订交付 task/、build.py、check.py。build.py 使用同样的两个参数，
+   从本轮材料重放生成 <output>/task/，即 --output 指向 task/ 的父目录。
+   例如 --output /tmp/replay 后必须存在 /tmp/replay/task/instruction.md，不能直接生成
+   /tmp/replay/instruction.md。不要写死作者机器路径；使用参数传入的目录。
+4. check.py --artifact <reference.xlsx 或 task/ 的绝对路径> --report <JSON路径>：
+   实际检查本模型的业务关系，写入 {"passed": true或false, "checks": [检查说明...]}，
+   检查不通过退出非零。执行层会独立重放 build.py 并实际执行 check.py。
+5. task/ 从 inputs/task-template/ 复制后填充：environment/input.xlsx、instruction.md、
+   solution/reference.xlsx、tests/reference.xlsx。两份 reference.xlsx 必须相同。
+   task.toml 和评分运行代码保持模板约定，业务模型放在工作簿中；附件放 environment/public/。
+   tests/targets.json 由构造代码生成，格式为 {"version":1,"cells":[{"sheet":"工作表名","cell":"A1"}]}。
+   清单非空、无重复，使用单格坐标；Debugging 必须完整列出直接注入故障的位置，Modeling
+   必须完整列出要求补全的位置。不要将下游自动变化或母本未清洗干净的位置自动纳入评分。
+   清单在试做前冻结，不能根据提交事后删去模型做错的目标。清单放在私有 tests/，不向解题者泄露。
+   tests/verify.py 使用 LibreOffice 重算后仅对这些目标格比较值，数值四舍五入保留两位小数，
+   允许等价公式或正确计算值，全部目标正确得 1，否则得 0。目标外差异仅记录，不影响得分。
+   check.py 验证清单与故障/挖空记录完整对应，逐个验证目标答案、必要依赖及公开依据，
+   并验证每个注入/挖空在两位小数的评分口径下确实有效。不要仅验证恢复了公式字符串。若目标的正确结果为空，按归一化空值比较，不把合法空值当成参考错误。
+   保留业务结构；无需以全表无遗漏错误作为构造成功条件。目标外问题影响目标答案或可解性时须修订。
+   tests/contract.json 保持模板值，不能为了制造失败改变规则。
+6. history/v0001... 提供全部既有版本及相关原始记录的可访问索引；按需阅读全文。
+   本轮异常、核验意见和重试反馈位于 inputs/feedback/，有则必须阅读。
+   在 build.py 同目录的私有构造记录中，按业务关系分组记录：考查关系、确定正确
+   口径的公开依据位置、注入/挖空后保留的推断依据、已执行业务检查及结论。
+   可沿用已有构造记录文件，不要求每格重复一份说明。rules.md、故障记录、检查报告
+   及该依据映射均为作者私有材料，不复制到 environment/、instruction 或公开附件。
+   必要业务事实应通过工作簿上下文或最少的补充材料表达，不公开整份作者规则。
+7. review_unsolved 的 revised 使用 artifacts.task/build/check 交付完整下一版；valid 的
+   artifacts 各项为 null。该阶段只有 valid/revised 两种结论，没有 report 或 evaluation_issue 字段。
+   正常得 0 分后发现循环计算、等价公式重算不稳定等问题，由构造者修订本题并交付下一版；
+   不修改固定评分器或运行代码，不以仅提交报告代替修订。
+   参考答案是出题阶段可修改的产物；发现错误时修正参考答案及相关输入和构造代码。
+   参考答案或母本继承的问题也按 revised 修订本题，不返回清洗或改写共享母本。
+   root_causes 每项用文本说明轨迹位置、实际错误、正确处理和影响。
+   task_consistency_checks 按业务关系列出对象：business_relation（覆盖的关系）、
+   public_evidence（公开文件及 sheet/cell/条款位置列表）、conclusion（实际检查及结论）。
+   unresolved_task_issues 列出仍影响本版目标正确性或可解性的问题。
+   valid 必须有非空一致性检查及公开依据、无未决问题；找到模型错误不能代替题目
+   一致性检查。revised 交付完整下一版并说明修复，未决项对应被审查的旧版。
+8. diagnose_evaluation 只交付 action=retry 或 report 及诊断依据，不提供题包、
+   修复代码或 runtime_patch。仅确认偶发问题时原版重试；代码、评分、重算、
+   接入缺陷或原因不明时 report，由调度器停止并报告人类。
+
+构造/加难/修订的 check.py 必须根据私有构造记录，核对输入与参考保留了题源中的
+业务假设及其定义，检查直接目标属于计算实现而非独立假设。假设位置按本模型
+业务含义识别，不能将所有硬编码一律视为假设，或将所有公式一律视为可破坏计算。
+新增模块使用其已确定的健康版本作为假设核对基准；私有清单不提供给解题者。
+数值勾稽须使用实际重算值或独立计算，先核对所用行列标签与业务含义。不能以
+data_only=False 读到的公式字符串直接参与数值勾稽；公式未求值、缓存缺失、
+类型转换失败或错误值必须显式报告并使相应检查失败，禁止兜底转成 0、跳过检查
+或用 0==0 宣称通过。合法业务空白仅在有明确依据时按该业务规则处理。

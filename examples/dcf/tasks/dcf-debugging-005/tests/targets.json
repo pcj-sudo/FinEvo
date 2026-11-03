@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "cells": [
+    {
+      "sheet": "Calcs",
+      "cell": "F13"
+    },
+    {
+      "sheet": "Calcs",
+      "cell": "F28"
+    },
+    {
+      "sheet": "BS",
+      "cell": "F16"
+    },
+    {
+      "sheet": "DCF",
+      "cell": "F9"
+    },
+    {
+      "sheet": "Calcs",
+      "cell": "F52"
+    },
+    {
+      "sheet": "BS",
+      "cell": "F48"
+    },
+    {
+      "sheet": "BS",
+      "cell": "G16"
+    },
+    {
+      "sheet": "DCF",
+      "cell": "G9"
+    },
+    {
+      "sheet": "Calcs",
+      "cell": "G52"
+    },
+    {
+      "sheet": "BS",
+      "cell": "G48"
+    },
+    {
+      "sheet": "BS",
+      "cell": "H16"
+    },
+    {
+      "sheet": "DCF",
+      "cell": "H9"
+    },
+    {
+      "sheet": "Calcs",
+      "cell": "H52"
+    },
+    {
+      "sheet": "BS",
+      "cell": "H48"
+    },
+    {
+      "sheet": "BS",
+      "cell": "I16"
+    },
+    {
+      "sheet": "DCF",
+      "cell": "I9"
+    },
+    {
+      "sheet": "Calcs",
+      "cell": "I52"
+    },
+    {
+      "sheet": "BS",
+      "cell": "I48"
+    }
+  ]
+}

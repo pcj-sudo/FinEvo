@@ -1,0 +1,23 @@
+{
+  "n_attempts": 1,
+  "n_concurrent_trials": 1,
+  "retry": {
+    "max_retries": 0
+  },
+  "agents": [
+    {
+      "name": "oracle"
+    }
+  ],
+  "datasets": [
+    {
+      "path": "../examples/dcf/tasks"
+    }
+  ],
+  "environment": {
+    "type": "docker"
+  },
+  "artifacts": [
+    "/app/output.xlsx"
+  ]
+}

@@ -1,0 +1,30 @@
+[project]
+name = "rsi-finance-training"
+version = "0.1.0"
+description = "Independent Harbor/OpenHands financial agent RL adapters"
+requires-python = ">=3.12,<3.13"
+dependencies = ["aiohttp>=3.10,<4", "httpx>=0.28,<1", "pyyaml>=6,<7", "toml==0.10.2"]
+
+[project.optional-dependencies]
+controller = [
+  "harbor @ git+https://github.com/laude-institute/harbor.git@e1be9bd39c368f88a27fee4cbd26655e9994ee5a",
+  "openpyxl==3.1.5",
+]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.24,<2"]
+
+[project.scripts]
+rsi-train = "rsi_training.cli:main"
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rsi_training"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

@@ -1,0 +1,16 @@
+name: CPU checks
+on: [push, pull_request]
+jobs:
+  cpu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -e ./generation -e ./evaluation -e './training[controller,dev]'
+      - run: python -m pip install -r generation/requirements-openhands.txt
+      - run: python scripts/validate_release.py
+      - run: python -m pytest generation/tests training/tests -q
+        env:
+          PYTHONPATH: generation/src:generation/tests:training/src:evaluation/src

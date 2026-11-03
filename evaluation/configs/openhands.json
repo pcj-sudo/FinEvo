@@ -1,0 +1,31 @@
+{
+  "n_attempts": 5,
+  "n_concurrent_trials": 1,
+  "retry": {
+    "max_retries": 0
+  },
+  "agents": [
+    {
+      "name": "openhands-sdk",
+      "kwargs": {
+        "reasoning_effort": "xhigh",
+        "load_skills": false,
+        "version": "1.47.0",
+        "max_iterations": 75
+      },
+      "model_name": "openai/Qwen3.6-27B",
+      "override_timeout_sec": 1800
+    }
+  ],
+  "datasets": [
+    {
+      "path": "../examples/dcf/tasks"
+    }
+  ],
+  "environment": {
+    "type": "docker"
+  },
+  "artifacts": [
+    "/app/output.xlsx"
+  ]
+}

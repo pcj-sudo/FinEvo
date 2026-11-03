@@ -1,0 +1,14 @@
+{
+  "parallel": {
+    "tp": 8,
+    "pp": 1,
+    "vpp": null
+  },
+  "head_chunk_size": 512,
+  "router_policy": "manual",
+  "controller_concurrency": 64,
+  "prefetch_batches": 1,
+  "schedule": "continuous_groups",
+  "training_nodes": 2,
+  "strict_sync": true
+}

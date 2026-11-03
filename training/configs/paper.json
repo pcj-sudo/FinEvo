@@ -1,0 +1,13 @@
+{
+  "steps": 8,
+  "epochs": 1,
+  "queries_per_step": 32,
+  "rollouts_per_query": 8,
+  "save_only_final": false,
+  "timeout_seconds": 172800,
+  "min_controller_concurrency": 64,
+  "prompt_manifest": "training/manifests/train-schedule-256.jsonl",
+  "min_checkpoint_free_gib": 1200,
+  "checkpoint_interval_steps": 1,
+  "repeat_policy": "balanced_train_cycles_v1"
+}

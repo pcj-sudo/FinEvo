@@ -1,0 +1,23 @@
+[project]
+name = "rsi-finance-evaluation"
+version = "0.1.0"
+description = "Standalone Harbor evaluation for RsiFinanceBench"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "harbor @ git+https://github.com/laude-institute/harbor.git@e1be9bd39c368f88a27fee4cbd26655e9994ee5a",
+]
+
+[project.scripts]
+rsi-eval = "rsi_evaluation.runner:main"
+rsi-report = "rsi_evaluation.reporting:main"
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rsi_evaluation"]
+
+[tool.hatch.metadata]
+allow-direct-references = true

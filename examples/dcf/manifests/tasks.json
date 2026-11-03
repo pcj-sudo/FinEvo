@@ -1,0 +1,572 @@
+{
+  "schema_version": 1,
+  "scope": "10-task DCF example; 8 train / 2 validation, distinct from paper split",
+  "tasks": [
+    {
+      "task_id": "dcf-debugging-001",
+      "task_type": "debugging",
+      "source_group": "dcf",
+      "path": "tasks/dcf-debugging-001",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "24023edd16529ab271d8c9c754de589eb56882b6d0be005d942c04989dc35772",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "3527081dc0aa5d18671c9d5699a2079c429878cef20abcbdf45da4f18dcd3317",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "a8a4d3a9dcb4678edad3382f991783b08786fd970a7a8164b25536dcdd671045",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "a8a4d3a9dcb4678edad3382f991783b08786fd970a7a8164b25536dcdd671045",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "ba96cdb0a55fe5ae3069b6739630502fecf649985a16d5efe210156a44d270b5",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "dcf-debugging-002",
+      "task_type": "debugging",
+      "source_group": "dcf",
+      "path": "tasks/dcf-debugging-002",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "6a8df8f7e804db1ea4cad0dc8f4e7c759efc8c24eecc2ccaf4b86fded54f459a",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "4c1c55f35deb19a173091d6ae1357f6271f33bda91b907927c3208f72df48f1d",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "4cf10658273d93bcd26ec5966648c9a9130609d2195d94aa67a9275179a1247b",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "afe625f5fa5545be29086829d5544b9f708051bf50dfd73e882dc2e475313eb8",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "afe625f5fa5545be29086829d5544b9f708051bf50dfd73e882dc2e475313eb8",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "b6589cbd3dd328e983e497ebb9dc0aadc8386b33e8900052f95df01faaf149e2",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "dcf-debugging-003",
+      "task_type": "debugging",
+      "source_group": "dcf",
+      "path": "tasks/dcf-debugging-003",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "5004cbd8679f7819b68d8389ea2acf72a224d63914dab4788ee9dac2f700d071",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "500d4370d1e41bd59917aec176d4da839b504422a1f378f6dc4f14d4a3dc05c0",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "70a31c6016adae5d7c35504a300a96a717d65fc33a2fb21753950dd88202db88",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "70a31c6016adae5d7c35504a300a96a717d65fc33a2fb21753950dd88202db88",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "e6f258e1b2971488567c68e859c85ba8656d162518c3312f0740925c4ab153ba",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "dcf-debugging-004",
+      "task_type": "debugging",
+      "source_group": "dcf",
+      "path": "tasks/dcf-debugging-004",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "a61ca0ae9c0e5f87fbe5fe7a0f6dfecd0cd8d1676c703c2c1a81c5c30e263ad4",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "e2f9d32a454df1d2bcf078ca189765d9d4fb0a6511f4797cd73d00ed98382571",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "65caadfc512f13d1f8bef2b00fd75a98eea9426d29bc5cf2378547f2ed631ef9",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "65caadfc512f13d1f8bef2b00fd75a98eea9426d29bc5cf2378547f2ed631ef9",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "bef457ce35ca4426bd7044e4dc47483ea1152ec2c70d88784a93c249cfee5ac3",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "dcf-debugging-005",
+      "task_type": "debugging",
+      "source_group": "dcf",
+      "path": "tasks/dcf-debugging-005",
+      "split": "validation",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "1af3b28ef84b56a9aa71a7ac5373424b39d9932ace49f155518feabf48f6675c",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "d826972f76d0f3a00d90217d4cb94cb50a8f31975b306e4ffad31b22cb619bc2",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "b5a973a1921e9fd0ae1ccc786218ad731ec31cb8b26aa85fc4e811af59b1f38e",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "b5a973a1921e9fd0ae1ccc786218ad731ec31cb8b26aa85fc4e811af59b1f38e",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "27b300355382ebbae3172915d00f16b92192c182ebb70bcafaa7c4b23395739c",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "dcf-modeling-001",
+      "task_type": "modeling",
+      "source_group": "dcf",
+      "path": "tasks/dcf-modeling-001",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "950150ff42114e73d8039255bf797a652eb1513acfda82e871ad35ef8348bdda",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "a426992db1be98b037cd0a0918deccdbeea2ca138debe146291937c34a95842c",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "70a31c6016adae5d7c35504a300a96a717d65fc33a2fb21753950dd88202db88",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "70a31c6016adae5d7c35504a300a96a717d65fc33a2fb21753950dd88202db88",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "037248617b03253c2d28ea0cf7be7a763e6f9b75c9f287589cc4dfe1c01d89e2",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "dcf-modeling-002",
+      "task_type": "modeling",
+      "source_group": "dcf",
+      "path": "tasks/dcf-modeling-002",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "0ea5c916bb703a82df4729f91d167930ba221298abf7839ab2da10d85517c8e2",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "24ffae6cb4e7f4b4b7e0498712c6fae2cd9a19fd63c793c1e77ef49d9a30ecbf",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "70a31c6016adae5d7c35504a300a96a717d65fc33a2fb21753950dd88202db88",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "70a31c6016adae5d7c35504a300a96a717d65fc33a2fb21753950dd88202db88",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "6fabb68ceebe03fa67499a913cf30e2547191573f2985e354ffbda88863b7c56",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "dcf-modeling-003",
+      "task_type": "modeling",
+      "source_group": "dcf",
+      "path": "tasks/dcf-modeling-003",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "a5ebe887d6b7af6060d548cdfd812f0773999b158d785a7c5908031e2285ad66",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "3cffd26b067a2123bebf2d2653c1ec5ee7b6c7144fafd179e87a15bb04471e5f",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "70a31c6016adae5d7c35504a300a96a717d65fc33a2fb21753950dd88202db88",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "70a31c6016adae5d7c35504a300a96a717d65fc33a2fb21753950dd88202db88",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "a13ec81bf30e22b88dd6a1240708237dc4319a0eef5778e9877da21a1cc6cff2",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "dcf-modeling-004",
+      "task_type": "modeling",
+      "source_group": "dcf",
+      "path": "tasks/dcf-modeling-004",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "d3f64a2262611953c9aa7bae2f526a8ce2da9e2b717b220683a28690c32e2f56",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "a6399bced1b63e811d59ed3eb760379a287425cbfe1cd833f7feba84dc516c46",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "70a31c6016adae5d7c35504a300a96a717d65fc33a2fb21753950dd88202db88",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "70a31c6016adae5d7c35504a300a96a717d65fc33a2fb21753950dd88202db88",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "878a85c8292de09b78bbaebe48b934623c5f38df637094bcb8fba42d18cc93ed",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "dcf-modeling-005",
+      "task_type": "modeling",
+      "source_group": "dcf",
+      "path": "tasks/dcf-modeling-005",
+      "split": "validation",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "b84e67f76f992a164bd9761863e28038dfe0323dca2abbfa023a60bffabd1af5",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "8c15d59ee6e6b383a9c9ddee34444a7145f24e1f96c25a6f9706f23d1aba30e3",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "70a31c6016adae5d7c35504a300a96a717d65fc33a2fb21753950dd88202db88",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "70a31c6016adae5d7c35504a300a96a717d65fc33a2fb21753950dd88202db88",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "f269ebb093fed4940a9ae59c8f3c078f8798b21aa662cce5c6a16609ae339a5c",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    }
+  ]
+}

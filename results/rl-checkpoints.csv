@@ -1,0 +1,6 @@
+checkpoint,response_limit,task_success_percent,target_accuracy_percent,attempts
+0,8192,22.73,52.52,110
+2,16384,21.82,52.78,110
+4,16384,20.91,54.61,110
+6,16384,24.55,57.80,110
+8,16384,29.09,58.25,110
