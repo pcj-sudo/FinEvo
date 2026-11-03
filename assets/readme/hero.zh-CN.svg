@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+<title id="title">FinEvo</title><desc id="desc">金融表格智能体 · 递归自我改进. 让模型创造下一道挑战。 再从挑战中，学会更多。</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102d36"/><stop offset="1" stop-color="#071a25"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#31bfa2" stop-opacity=".16"/><stop offset="1" stop-color="#31bfa2" stop-opacity="0"/></radialGradient>
+ <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#76b7b5" stroke-opacity=".055"/></pattern>
+ <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1L6 4L1 7" fill="none" stroke="#64e0b9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<rect width="1280" height="360" rx="18" fill="url(#bg)"/>
+<rect width="1280" height="360" rx="18" fill="url(#grid)"/>
+<ellipse cx="993" cy="180" rx="300" ry="260" fill="url(#glow)"/>
+<g font-family="'Noto Sans CJK SC', sans-serif">
+ <rect x="64" y="45" width="5" height="16" rx="2" fill="#64e0b9"/>
+ <text x="82" y="58" font-size="12" letter-spacing="1.6" fill="#8fcbc6">金融表格智能体 · 递归自我改进</text>
+ <text x="62" y="146" font-size="79" font-weight="750" letter-spacing="-3" fill="#f5fbfa">Fin<tspan fill="#64e0b9">Evo</tspan></text>
+ <text x="66" y="201" font-size="28" font-weight="600" fill="#ecf7f4">让模型创造下一道挑战。</text>
+ <text x="66" y="241" font-size="28" font-weight="400" fill="#b3d2d0">再从挑战中，学会更多。</text>
+ <g font-size="11" font-weight="600" letter-spacing="1.1" fill="#c5e9e1">
+  <rect x="66" y="282" width="118" height="30" rx="15" fill="#143e44" stroke="#2a6164"/><text x="125" y="301" text-anchor="middle">构造任务</text>
+  <path d="M195 297h20" stroke="#5d9b97" stroke-width="1.5"/><path d="m211 293 4 4-4 4" fill="none" stroke="#5d9b97" stroke-width="1.5"/>
+  <rect x="228" y="282" width="104" height="30" rx="15" fill="#143e44" stroke="#2a6164"/><text x="280" y="301" text-anchor="middle">反馈改进</text>
+  <path d="M343 297h20" stroke="#5d9b97" stroke-width="1.5"/><path d="m359 293 4 4-4 4" fill="none" stroke="#5d9b97" stroke-width="1.5"/>
+  <rect x="376" y="282" width="104" height="30" rx="15" fill="#143e44" stroke="#2a6164"/><text x="428" y="301" text-anchor="middle">强化学习</text>
+ </g>
+</g>
+<g>
+ <path d="M815 107C833 35 1063 24 1127 106" fill="none" stroke="#64e0b9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+ <path d="M1124 247C1101 325 874 329 811 249" fill="none" stroke="#64e0b9" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)"/>
+ <rect x="824" y="82" width="284" height="194" rx="12" fill="#0a222e" stroke="#538481" stroke-width="1.4"/>
+ <rect x="824" y="82" width="284" height="16" rx="10" fill="#234b50"/>
+ <rect x="824" y="90" width="284" height="8" fill="#234b50"/>
+ <rect x="850" y="109" width="53" height="27" rx="4" fill="#193b44" opacity="1"/><rect x="911" y="109" width="53" height="27" rx="4" fill="#193b44" opacity="1"/><rect x="972" y="109" width="53" height="27" rx="4" fill="#193b44" opacity="1"/><rect x="1033" y="109" width="53" height="27" rx="4" fill="#193b44" opacity="1"/><rect x="850" y="144" width="53" height="27" rx="4" fill="#193b44" opacity="1"/><rect x="911" y="144" width="53" height="27" rx="4" fill="#193b44" opacity="1"/><rect x="972" y="144" width="53" height="27" rx="4" fill="#56d6b0" opacity=".85"/><rect x="1033" y="144" width="53" height="27" rx="4" fill="#193b44" opacity="1"/><rect x="850" y="179" width="53" height="27" rx="4" fill="#193b44" opacity="1"/><rect x="911" y="179" width="53" height="27" rx="4" fill="#193b44" opacity="1"/><rect x="972" y="179" width="53" height="27" rx="4" fill="#193b44" opacity="1"/><rect x="1033" y="179" width="53" height="27" rx="4" fill="#193b44" opacity="1"/><rect x="850" y="214" width="53" height="27" rx="4" fill="#56d6b0" opacity=".85"/><rect x="911" y="214" width="53" height="27" rx="4" fill="#193b44" opacity="1"/><rect x="972" y="214" width="53" height="27" rx="4" fill="#193b44" opacity="1"/><rect x="1033" y="214" width="53" height="27" rx="4" fill="#193b44" opacity="1"/>
+ <path d="m1048 235 9 9 19-21" fill="none" stroke="#81ebc6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M851 248h83" stroke="#365c63" stroke-width="4" stroke-linecap="round"/>
+ <path d="M851 259h54" stroke="#284751" stroke-width="3" stroke-linecap="round"/>
+</g>
+</svg>

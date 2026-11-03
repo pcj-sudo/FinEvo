@@ -1,12 +1,24 @@
 # FinEvo
 
+![FinEvo — Create the next challenge. Then learn from it.](assets/readme/hero.en.png)
+
 **Self-Generated Challenging Tasks for Recursive Self-Improvement of Financial Spreadsheet Agents**
 
 **English** · [简体中文](README.zh-CN.md)
 
-FinEvo connects **task generation, executable feedback, and reinforcement learning** for financial spreadsheet agents. The same target model prepares source workbooks, constructs and refines challenges, and learns from its own interactions through synchronous GRPO.
+[Quick start](#quick-start) · [Explore the 10 tasks](examples/dcf/tasks/) · [Generate challenges](generation/README.md) · [Train the agent](training/README.md)
 
-This repository provides the generation pipeline, standalone evaluation, synchronous training code, and a complete **DCF example with 10 tasks**. The default target model is **Qwen3.6-27B**, with OpenHands as the agent framework.
+**The model helps create the challenges it learns from.**
+
+One wrong formula can ripple through a forecast, a balance sheet, and a company's valuation. A financial spreadsheet agent has to follow those business relationships across an entire workbook. FinEvo turns that same workbook into a source of new challenges—and learning experience—for the model itself.
+
+Start with a complete financial model. Let the agent build or repair it. Use what happened to improve the next challenge, then train on the accepted tasks with **synchronous GRPO**.
+
+| Build the challenge | Learn from the attempt | Improve the agent |
+| --- | --- | --- |
+| Construct modeling and debugging tasks from complete workbooks. | Read successful trajectories to harden tasks; review failures to identify task issues. | Train on the model's own tool interactions with executable rewards. |
+
+The default target model is **Qwen3.6-27B**, running through **OpenHands**. This repository includes the generation, evaluation, and training code, plus a complete **DCF workbook and 10 tasks** to explore.
 
 ## How it works
 
@@ -15,6 +27,17 @@ This repository provides the generation pipeline, standalone evaluation, synchro
 3. **Learn from self-generated experience.** Collect tool-use trajectories on the accepted tasks and optimize the model with binary task rewards. Synchronous sampling keeps every training batch aligned with the current policy.
 
 The included DCF workbook is already prepared and can be used directly for generation. The same-model cleaning and verification pipeline is available for new source workbooks.
+
+## One workbook. Two kinds of challenge.
+
+The example company, **Aster Vale Products**, has six connected worksheets: assumptions, income statement, balance sheet, cash flow, calculation schedules, and DCF valuation. Try either side of the problem:
+
+| Task | What the agent does | Open an example |
+| --- | --- | --- |
+| **Modeling** · 5 tasks | Complete missing forecast calculations, depreciation schedules, and debt-sweep logic so the model works end to end. | [Read the modeling task](examples/dcf/tasks/dcf-modeling-001/instruction.md) |
+| **Debugging** · 5 tasks | Find and repair formula errors while preserving the model's assumptions and structure. | [Read the debugging task](examples/dcf/tasks/dcf-debugging-001/instruction.md) |
+
+Every task includes an input workbook, instructions, a reference solution, and a fixed verifier. [Browse the example data →](examples/dcf/README.md)
 
 ## Repository contents
 
