@@ -21,30 +21,34 @@ def tracked_files():
             and not (len(p.relative_to(ROOT).parts)>1 and p.relative_to(ROOT).parts[:2] in [('generation','workspace'),('generation','state'),('generation','sources')])]
 
 def main():
-    sample=ROOT/'examples/dcf'
-    manifest=json.loads((sample/'manifests/tasks.json').read_text())
-    tasks=manifest['tasks'];assert len(tasks)==10
-    assert Counter(x['task_type'] for x in tasks)=={'modeling':5,'debugging':5}
-    assert Counter(x['split'] for x in tasks)=={'train':8,'validation':2}
-    assert {x['source_group'] for x in tasks}=={'dcf'}
-    for row in tasks:
-        task=sample/row['path']
-        got={str(p.relative_to(task)) for p in task.rglob('*') if p.is_file()}
-        assert got==set(row['files']),(row['task_id'],'file set')
-        for f,entry in row['files'].items():
-            assert sha(task/f)==entry['sha256'],(row['task_id'],f)
-            assert bool((task/f).stat().st_mode&0o111)==entry['executable'],(row['task_id'],f,'mode')
-        targets=json.loads((task/'tests/targets.json').read_text())['cells']
-        assert targets and len({(x['sheet'],x['cell']) for x in targets})==len(targets)
-        assert sha(task/'solution/reference.xlsx')==sha(task/'tests/reference.xlsx')
-        contract=json.loads((task/'tests/contract.json').read_text())
-        assert contract['scoring']=='target_cells' and contract['reward']=='binary'
-        assert contract['numeric_decimals']==2
-    for split in ['train','validation','test']:
-        rows=[json.loads(l) for l in (sample/'manifests'/f'{split}.jsonl').read_text().splitlines()]
-        expected={x['task_id']:x for x in tasks if x['split']==split}
-        assert {x['metadata']['task_id'] for x in rows}==set(expected)
-        for row in rows:assert row['prompt']==(sample/expected[row['metadata']['task_id']]['path']/'instruction.md').read_text()
+    families=['financialstatements1','financialstatements2']
+    all_tasks=[]
+    for family in families:
+        sample=ROOT/'examples'/family
+        manifest=json.loads((sample/'manifests/tasks.json').read_text())
+        tasks=manifest['tasks'];assert len(tasks)==10
+        assert Counter(x['task_type'] for x in tasks)=={'modeling':5,'debugging':5}
+        assert Counter(x['split'] for x in tasks)=={'train':8,'validation':2}
+        assert {x['source_group'] for x in tasks}=={family}
+        for row in tasks:
+            task=sample/row['path']
+            got={str(p.relative_to(task)) for p in task.rglob('*') if p.is_file()}
+            assert got==set(row['files']),(row['task_id'],'file set')
+            for f,entry in row['files'].items():
+                assert sha(task/f)==entry['sha256'],(row['task_id'],f)
+                assert bool((task/f).stat().st_mode&0o111)==entry['executable'],(row['task_id'],f,'mode')
+            targets=json.loads((task/'tests/targets.json').read_text())['cells']
+            assert targets and len({(x['sheet'],x['cell']) for x in targets})==len(targets)
+            assert sha(task/'solution/reference.xlsx')==sha(task/'tests/reference.xlsx')
+            contract=json.loads((task/'tests/contract.json').read_text())
+            assert contract['scoring']=='target_cells' and contract['reward']=='binary'
+            assert contract['numeric_decimals']==2
+        for split in ['train','validation','test']:
+            rows=[json.loads(l) for l in (sample/'manifests'/f'{split}.jsonl').read_text().splitlines()]
+            expected={x['task_id']:x for x in tasks if x['split']==split}
+            assert {x['metadata']['task_id'] for x in rows}==set(expected)
+            for row in rows:assert row['prompt']==(sample/expected[row['metadata']['task_id']]['path']/'instruction.md').read_text()
+        all_tasks.extend(tasks)
     for pkg in ['generation','evaluation','training']:sys.path.insert(0,str(ROOT/pkg/'src'))
     for module in ['rsi_generation.cli','rsi_evaluation.runner','rsi_training.profile','rsi_training.continuous_state','rsi_training.reward']:
         importlib.import_module(module)
@@ -83,8 +87,8 @@ def main():
         frozen=json.loads(current.read_text())['files']
         assert set(frozen)=={str(p.relative_to(ROOT)) for p in files if p!=current},'release file set changed'
         assert all(sha(ROOT/f)==h for f,h in frozen.items()),'release file checksum changed'
-    print(json.dumps({'status':'passed','tasks':10,'modeling':5,'debugging':5,'source_families':1,
-                      'train':8,'validation':2,'xlsx_files':len(list(sample.rglob('*.xlsx'))),
+    print(json.dumps({'status':'passed','tasks':len(all_tasks),'modeling':10,'debugging':10,'source_families':len(families),
+                      'train':16,'validation':4,'xlsx_files':len(list((ROOT/'examples').rglob('*.xlsx'))),
                       'python_files':sum(p.suffix=='.py' for p in files),'frozen_task_hashes_verified':True,
                       'strict_sync_config_verified':True,'private_content_scan':'passed',
                       'models_workbook_recalculation_gpu':False},indent=2))

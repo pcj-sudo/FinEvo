@@ -52,8 +52,7 @@ def test_retry_bounded_and_non_timeout_not_retried(tmp_path,monkeypatch,kind):
 def test_all_frozen_task_verifiers_accept_patch_only_in_copy(tmp_path):
     import shutil,hashlib
     repo=Path(__file__).resolve().parents[2]
-    tasks=repo/'examples/dcf/tasks'
-    files=list(tasks.glob('*/tests/verify.py'));assert len(files)==10
+    files=sorted((repo/'examples').glob('financialstatements*/tasks/*/tests/verify.py'));assert len(files)==20
     for i,p in enumerate(files):
         original=p.read_bytes();copy=tmp_path/str(i)/'tests';copy.mkdir(parents=True)
         shutil.copyfile(p,copy/'verify.py');v.install(copy.parent)

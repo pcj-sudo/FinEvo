@@ -6,8 +6,8 @@ From the repository root, register the included prepared workbook and generate a
 
 ```bash
 python scripts/import_prepared_source.py
-rsi-generate --root generation --harness openhands run dcf-new-modeling-001 \
-  --source dcf-example --type modeling --reuse-source
+rsi-generate --root generation --harness openhands run financialstatements1-new-modeling-001 \
+  --source financialstatements1-example --type modeling --reuse-source
 ```
 
 Use `--type debugging` for formula repair. `--reuse-source` skips cleaning for a prepared source; omitting it starts a new cleaning and independent audit loop. For an unprepared workbook directory:

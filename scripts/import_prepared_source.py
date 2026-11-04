@@ -6,7 +6,7 @@ from rsi_generation.files import identifier,tree_hash,write_json,read_json,Pipel
 from rsi_generation.sources import source_folder
 
 
-def register(root, workbook, source_id='dcf-example'):
+def register(root, workbook, source_id='financialstatements1-example'):
     root,workbook=Path(root).resolve(),Path(workbook).resolve()
     identifier(source_id)
     if not workbook.is_file() or workbook.suffix.lower()!='.xlsx':
@@ -32,8 +32,8 @@ def register(root, workbook, source_id='dcf-example'):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--root',type=Path,default=Path('generation'))
-    p.add_argument('--workbook',type=Path,default=Path('examples/dcf/reference.xlsx'))
-    p.add_argument('--source-id',default='dcf-example')
+    p.add_argument('--workbook',type=Path,default=Path('examples/financialstatements1/reference.xlsx'))
+    p.add_argument('--source-id',default='financialstatements1-example')
     a=p.parse_args();print(register(a.root,a.workbook,a.source_id))
 
 if __name__=='__main__':main()

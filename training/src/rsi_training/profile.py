@@ -10,7 +10,7 @@ DEFAULTS = {
     'steps': 1, 'epochs': 1, 'queries_per_step': 1, 'rollouts_per_query': 4,
     'save_only_final': True, 'timeout_seconds': 28800,
     'min_controller_concurrency': 1,
-    'prompt_manifest': 'examples/dcf/manifests/train.jsonl',
+    'prompt_manifest': 'examples/financialstatements1/manifests/train.jsonl',
     'min_checkpoint_free_gib': 0,
     'checkpoint_interval_steps': None,
     'repeat_policy': None,

@@ -6,7 +6,7 @@
 
 [English](README.md) · **简体中文**
 
-[引用](#引用) · [快速开始](#快速开始) · [浏览 10 道任务](examples/dcf/tasks/) · [自主造题](generation/README.md) · [训练智能体](training/README.md)
+[引用](#引用) · [快速开始](#快速开始) · [浏览 20 道任务](examples/README.md) · [自主造题](generation/README.md) · [训练智能体](training/README.md)
 
 **让模型参与创造自己接下来要学习的挑战。**
 
@@ -18,7 +18,7 @@
 | --- | --- | --- |
 | 从完整工作簿构造建模与调试任务。 | 阅读成功轨迹指导加难，审查失败以发现题目自身的问题。 | 利用模型自身的工具交互与可执行奖励开展训练。 |
 
-默认目标模型为 **Qwen3.6-27B**，智能体框架为 **OpenHands**。仓库提供造题、评测与训练代码，以及一份可直接探索的 **DCF 工作簿与 10 道任务**。
+默认目标模型为 **Qwen3.6-27B**，智能体框架为 **OpenHands**。仓库提供造题、评测与训练代码，以及**两份财务报表工作簿与 20 道任务**。
 
 ## 方法流程
 
@@ -26,18 +26,18 @@
 2. **迭代构造挑战。** 生成建模或调试任务，检查可执行产物，再由全新上下文中的求解者试做。成功轨迹用于指导加难；检查失败和求解失败后的审查用于指导重构或修题。经审查有效的挑战进入收录题集。
 3. **通过自身经验学习。** 在收录任务上采集工具交互轨迹，利用二元整题奖励优化模型。同步采样使每批训练轨迹与当前策略保持一致。
 
-仓库中的 DCF 工作簿已完成准备，可以直接作为造题输入。对于新题源，也可以运行同模型清洗与核验流程。
+仓库中的两份财务报表工作簿已完成准备，可以直接作为造题输入。对于新题源，也可以运行同模型清洗与核验流程。
 
-## 一份工作簿，两类挑战
+## 两份工作簿，二十道挑战
 
-示例公司 **Aster Vale Products** 包含六张相互联动的工作表：关键假设、利润表、资产负债表、现金流量表、计算明细与 DCF 估值。可以从两种任务入手：
+两份虚构公司的模型包含相互联动的利润表、资产负债表、现金流量表、经营驱动和业务分部明细。每份题源提供 **5 道建模题和 5 道调试题**：
 
-| 任务 | 智能体需要做什么 | 查看实例 |
-| --- | --- | --- |
-| **建模** · 5 道 | 补齐预测计算、折旧明细与债务偿还逻辑，让整个模型正确联动。 | [阅读建模题](examples/dcf/tasks/dcf-modeling-001/instruction.md) |
-| **调试** · 5 道 | 识别并修复公式错误，同时保持原有假设和工作簿结构。 | [阅读调试题](examples/dcf/tasks/dcf-debugging-001/instruction.md) |
+| 题源 | 完整工作簿 | 建模任务 | 调试任务 |
+| --- | --- | --- | --- |
+| **financialstatements1** | [工作簿](examples/financialstatements1/reference.xlsx) | [浏览任务](examples/financialstatements1/tasks/) | [阅读调试题](examples/financialstatements1/tasks/financialstatements1-debugging-001/instruction.md) |
+| **financialstatements2** | [工作簿](examples/financialstatements2/reference.xlsx) | [浏览任务](examples/financialstatements2/tasks/) | [阅读调试题](examples/financialstatements2/tasks/financialstatements2-debugging-001/instruction.md) |
 
-每道任务都包含输入工作簿、题目说明、参考解答与固定评分器。[浏览示例数据 →](examples/dcf/README.md)
+每道任务都包含输入工作簿、题目说明、参考解答与固定评分器。[浏览示例数据 →](examples/README.md)
 
 ## 仓库内容
 
@@ -46,7 +46,7 @@
 | `generation/` | 清洗、核验、任务构造、加难与失败审查 | [造题指南](generation/README.md) |
 | `evaluation/` | 独立 Harbor 评测与结果汇总 | [评测指南](evaluation/README.md) |
 | `training/` | 同步 GRPO、固定版本的运行适配代码与训练配置 | [训练指南](training/README.md) |
-| `examples/dcf/` | 一份完整题源及 5 道建模题、5 道调试题 | [示例数据](examples/dcf/README.md) |
+| `examples/` | 两份题源及 10 道建模题、10 道调试题 | [示例数据](examples/README.md) |
 | `results/` | 论文主实验的学习曲线与造题进度汇总 | [结果说明](results/README.md) |
 | `scripts/` | 题源注册、训练任务调度、控制器配置与版本校验 | [辅助脚本](scripts/) |
 
@@ -89,17 +89,17 @@ export LLM_API_KEY="$OPENAI_API_KEY"
 
 ### 4. 造题或评测
 
-注册已准备好的 DCF 工作簿，然后生成一道新的建模任务：
+注册第一份已准备好的财务报表工作簿，然后生成一道新的建模任务：
 
 ```bash
 python scripts/import_prepared_source.py
-rsi-generate --root generation --harness openhands run dcf-new-modeling-001 \
-  --source dcf-example --type modeling --reuse-source
+rsi-generate --root generation --harness openhands run financialstatements1-new-modeling-001 \
+  --source financialstatements1-example --type modeling --reuse-source
 ```
 
 将 `--type` 改为 `debugging` 即可构造公式修复任务。新工作簿清洗、运行恢复与成品题导出见[造题指南](generation/README.md)。
 
-评测仓库中已有的 10 道任务：
+评测仓库中的 20 道任务：
 
 ```bash
 rsi-eval --root evaluation --config configs/openhands.json
@@ -113,16 +113,14 @@ rsi-eval --root evaluation --config configs/openhands.json
 
 | 配置 | 更新次数 | 每次更新的任务数 | 每题采样轨迹数 |
 | --- | ---: | ---: | ---: |
-| [DCF 示例](training/configs/demo.json) | 2 | 4 | 8 |
+| [财务报表示例](training/configs/demo.json) | 2 | 4 | 8 |
 | [论文配置](training/configs/paper.json) | 8 | 32 | 8 |
 
 当前分布式启动器使用六个八卡节点。示例配置缩小了数据量和更新次数，同时保留这一计算拓扑；论文配置需要另行提供获授权的完整数据集。
 
 ## 示例数据与实验范围
 
-DCF 示例包含六张工作表，覆盖联动财务报表、折旧摊销、债务偿还与现金清扫、估值等业务关系。示例采用虚构公司和合成业务数值，可用于查看完整题目格式并运行管线。
-
-这 10 道任务按 **8 道训练题、2 道验证题**划分，供代码演示使用。论文实验包含来自 11 份题源的 110 道任务，RL 划分为 **88/22**。本仓库中的子集支持方法探索；完整训练结果的复现需要完整数据和模型访问权限。历史题源准备会话、模型权重及训练检查点未随仓库提供。
+每份公开题源包含七张工作表及十道任务，按 **8 道训练题、2 道验证题**划分；两份题源合计 **16 道训练题、4 道验证题**。训练演示默认使用 `financialstatements1`，评测配置同时包含两个目录。论文实验包含来自 11 份题源的 110 道任务，RL 划分为 **88/22**。本仓库中的示例支持方法探索；完整训练结果的复现需要完整数据和模型访问权限。历史题源准备会话、模型权重及训练检查点未随仓库提供。
 
 ## 开发与检查
 

@@ -1,0 +1,572 @@
+{
+  "schema_version": 1,
+  "scope": "10-task financial-statements example; 8 train / 2 validation, distinct from paper split",
+  "tasks": [
+    {
+      "task_id": "financialstatements2-debugging-001",
+      "task_type": "debugging",
+      "source_group": "financialstatements2",
+      "path": "tasks/financialstatements2-debugging-001",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "ab1767a004139a00c3f1e0e4783ea344cf9fc48c34b41f1740a92f1430b4490b",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "451b0342478a33c1c031680167133e1d4ae0d11ef15a70e0fdbcb395846fe39c",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "e99561932a5b3eed1415b03b3da9de1e9d18952e5d2ad352e3db5f6ed5343f09",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "e99561932a5b3eed1415b03b3da9de1e9d18952e5d2ad352e3db5f6ed5343f09",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "15532839b25ebf676591094841014f11487ece7ddc86cdf5d3ef938fac6df6e8",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "financialstatements2-debugging-002",
+      "task_type": "debugging",
+      "source_group": "financialstatements2",
+      "path": "tasks/financialstatements2-debugging-002",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "ecf174f755b40eb0fe04367343ca84a12450ee2088b88672258b157137422ec7",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "ef7d03e37b581845210dfea52bce3108517e4b0296c87350c72b575d58740d12",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "e99561932a5b3eed1415b03b3da9de1e9d18952e5d2ad352e3db5f6ed5343f09",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "e99561932a5b3eed1415b03b3da9de1e9d18952e5d2ad352e3db5f6ed5343f09",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "3f52b69b8b0b8aa8186158f0ee209438805e25bf5fb052abd0746b83d309fd8e",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "financialstatements2-debugging-003",
+      "task_type": "debugging",
+      "source_group": "financialstatements2",
+      "path": "tasks/financialstatements2-debugging-003",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "ce4a9060df0aeb52bf9bbf9e7269048a555aab97a38e77872283ea3ba14c277c",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "491ba1bb4678b760dd13132f04e378b45f7f9d1732314d70b73007b2e8b27f65",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "c424253d5f0f5c434e8188e793f5b78795d0e0f52ca37d55423639b2e2ae4519",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "c424253d5f0f5c434e8188e793f5b78795d0e0f52ca37d55423639b2e2ae4519",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "42b0fb87e571b0f9237cc8a02d26e41913cf53ea3ba02c7b127fd6bfd1fc953e",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "financialstatements2-debugging-004",
+      "task_type": "debugging",
+      "source_group": "financialstatements2",
+      "path": "tasks/financialstatements2-debugging-004",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "73ec5e3a8153b0c75fc9ea06e38abed3f55c14e2c14f865fa9f0c65804b369ba",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "a58584de829c7d23ee8a3e5ce6a0c07f5c1c6440dfd30ed3b508dfb506587dfa",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "872eb9bc4b5b5ea29fab83f90c6c4e337eaa114b531a16dc6d1b9e4e5f779236",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "872eb9bc4b5b5ea29fab83f90c6c4e337eaa114b531a16dc6d1b9e4e5f779236",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "0455a7e34fc072cf2a4b29be43196405f623c2d1b2e3df8583e8bcbfcce2ad01",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "financialstatements2-debugging-005",
+      "task_type": "debugging",
+      "source_group": "financialstatements2",
+      "path": "tasks/financialstatements2-debugging-005",
+      "split": "validation",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "d9f974e482b255ada9054989d5586683e8733a0931c9c96ff2f8ba7720f4abb3",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "5b4e4d1acd79f33016bdda62f4cb7b492817b47b0314e315d2aa097022625078",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "193a228f8591ea1b2d7b441805366a00b7f4c936dbe5485ce2a204532205d337",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "193a228f8591ea1b2d7b441805366a00b7f4c936dbe5485ce2a204532205d337",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "2d62c63a650fc6784c1e0648cd99b5feafa1819287e2ab5e910aea82e1755700",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "financialstatements2-modeling-001",
+      "task_type": "modeling",
+      "source_group": "financialstatements2",
+      "path": "tasks/financialstatements2-modeling-001",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "e25505492d65802c430347c0c850cef4d2a26035c83f671a466259a2304b2cd0",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "3e486e0e29a774849c934265d5d47284fd548d98347a17274c545dcbb186a84f",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "2e49245ab2abad2a83bc3ce8c3a918e51365c82a7424b55bb3dda244a1d63a7e",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "2e49245ab2abad2a83bc3ce8c3a918e51365c82a7424b55bb3dda244a1d63a7e",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "a19ef9c58e854f2ab6b19140910e57e377d9ec4e1ce1a25a312b2566dcc38233",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "financialstatements2-modeling-002",
+      "task_type": "modeling",
+      "source_group": "financialstatements2",
+      "path": "tasks/financialstatements2-modeling-002",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "fe8bdfa9c86321a9bbee931eb21b5afcc252ca2f9982dab84afa7fa9f1bf1e1e",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "951212665b460586359fe06cf04cad79d99b5a657b55a3e33adb5fcbfd809737",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "e99561932a5b3eed1415b03b3da9de1e9d18952e5d2ad352e3db5f6ed5343f09",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "e99561932a5b3eed1415b03b3da9de1e9d18952e5d2ad352e3db5f6ed5343f09",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "c31957ed3a8b99571676de5385ba74fd032f7887d04b67953521d671f4a212c3",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "financialstatements2-modeling-003",
+      "task_type": "modeling",
+      "source_group": "financialstatements2",
+      "path": "tasks/financialstatements2-modeling-003",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "74086f7fc84e37e57649e03a860f3dc0fc5f7de4264fc455c6c93fdc856b3a74",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "05fde8f79dbcf002eb478d4ea57de3f534d16d9e62b65345841189e118653241",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "e99561932a5b3eed1415b03b3da9de1e9d18952e5d2ad352e3db5f6ed5343f09",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "e99561932a5b3eed1415b03b3da9de1e9d18952e5d2ad352e3db5f6ed5343f09",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "b978218a42c93a3ce8ff9e9593da5c72142ebf0ca5528900893d4e9d2659e766",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "financialstatements2-modeling-004",
+      "task_type": "modeling",
+      "source_group": "financialstatements2",
+      "path": "tasks/financialstatements2-modeling-004",
+      "split": "train",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "6b5d823f777ec7ab89e8f5727ec9ee790396fc8d711c990e1ba45647857ca8d9",
+          "executable": false
+        },
+        "environment/public/README.txt": {
+          "sha256": "cf9349530aee31bbcc78bfd25e1835ef98bbf229eeac90d333f67953e7b4d9d4",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "59d4c2d8d849280ab164d041de7dae32bc6fa593c72d0cdba7132ef6da8e4aab",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "e99561932a5b3eed1415b03b3da9de1e9d18952e5d2ad352e3db5f6ed5343f09",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "e99561932a5b3eed1415b03b3da9de1e9d18952e5d2ad352e3db5f6ed5343f09",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "8e0d0822f1483043b3c029f9e707295ddfe67ab77e5b3e7d7048fd3212259ce5",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    },
+    {
+      "task_id": "financialstatements2-modeling-005",
+      "task_type": "modeling",
+      "source_group": "financialstatements2",
+      "path": "tasks/financialstatements2-modeling-005",
+      "split": "validation",
+      "files": {
+        "environment/Dockerfile": {
+          "sha256": "fc9d346406aedab913013ad85b811b04990dc6f3c09f957f9c2bfacbe79274e8",
+          "executable": false
+        },
+        "environment/input.xlsx": {
+          "sha256": "f992401e011ea6ea59457fd4a1a47e3ff0962407665d8196ae8cb180f4c7d409",
+          "executable": false
+        },
+        "instruction.md": {
+          "sha256": "df3426eb47e4cb57a7a2e7233d54e350baee81979805de90b6893cfda17b7d6c",
+          "executable": false
+        },
+        "solution/reference.xlsx": {
+          "sha256": "5d7740f19254eb8368ebb104c1249edfc536f4ee2709c19b1c8ff1fd6e2c36b7",
+          "executable": false
+        },
+        "solution/solve.sh": {
+          "sha256": "a011137f1942f6faf92d448a7546626e0788e404b71cf814ffc38cde6b1e19eb",
+          "executable": true
+        },
+        "task.toml": {
+          "sha256": "a4b50669c7a5aa88b9dbea18c975883b4d00f202924ecbca70ab328f51ad3fa7",
+          "executable": false
+        },
+        "tests/contract.json": {
+          "sha256": "5195f740f6100dfe8dc5f140a5312c720e0bbd5345f7891862dc63b8422cd0ef",
+          "executable": false
+        },
+        "tests/reference.xlsx": {
+          "sha256": "5d7740f19254eb8368ebb104c1249edfc536f4ee2709c19b1c8ff1fd6e2c36b7",
+          "executable": false
+        },
+        "tests/targets.json": {
+          "sha256": "e17ea41ff26272d01e8ed978342b4775e42e07b67863df75dc4faed0584afee8",
+          "executable": false
+        },
+        "tests/test.sh": {
+          "sha256": "65171e81a1e05565a0d7b0084a3ee027ea068d745c63997d56cae9feacad32d7",
+          "executable": true
+        },
+        "tests/verify.py": {
+          "sha256": "86f5a43b5e666c5630e0f0941baa75177659823659929c224bba6bf582b594d4",
+          "executable": false
+        }
+      }
+    }
+  ]
+}

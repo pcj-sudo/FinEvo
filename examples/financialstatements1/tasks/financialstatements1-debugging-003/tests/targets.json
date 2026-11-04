@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "cells": [
+    {
+      "sheet": "Cash Flow",
+      "cell": "E24"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "F24"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "E99"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "F99"
+    },
+    {
+      "sheet": "Income Statement",
+      "cell": "E100"
+    },
+    {
+      "sheet": "Income Statement",
+      "cell": "F100"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "E41"
+    },
+    {
+      "sheet": "Cash Flow",
+      "cell": "F41"
+    },
+    {
+      "sheet": "Balance Sheet",
+      "cell": "D28"
+    }
+  ]
+}

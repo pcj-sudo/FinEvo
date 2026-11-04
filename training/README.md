@@ -21,7 +21,7 @@ python scripts/configure_controller.py \
   --gateway-url http://learner-gateway-address:18001
 mkdir -p private
 python -c "from pathlib import Path; import secrets; p=Path('private/controller-token'); p.write_text(secrets.token_urlsafe(32)); p.chmod(0o600)"
-rsi-train --root examples/dcf serve --config private/controller.json \
+rsi-train --root examples/financialstatements1 serve --config private/controller.json \
   --token-file private/controller-token --host 0.0.0.0 --port 18002
 ```
 
@@ -33,7 +33,7 @@ Run inside the prepared GPU runtime on each node, with the repository and task d
 
 ```bash
 export RSI_ROOT=/path/to/FinEvo
-export RSI_RUN_ID=dcf-demo
+export RSI_RUN_ID=financialstatements-demo
 export RSI_NODE_IPS=learner0,learner1,rollout0,rollout1,rollout2,rollout3
 export RSI_GPU_IP=learner0
 export RSI_LOCAL_IP=this-node-address
@@ -42,7 +42,7 @@ export RSI_TRAIN_PROFILE=$RSI_ROOT/training/configs/demo.json
 export RSI_OPTIMIZATION_CONFIG=$RSI_ROOT/training/configs/optimization.json
 export RSI_CONTROLLER_URL=http://controller-address:18002
 export RSI_CONTROLLER_TOKEN_FILE=$RSI_ROOT/private/controller-token
-export RSI_DATASET_ROOT=$RSI_ROOT/examples/dcf
+export RSI_DATASET_ROOT=$RSI_ROOT/examples/financialstatements1
 export NCCL_SOCKET_IFNAME='=your-interface'
 export GLOO_SOCKET_IFNAME=your-interface
 export MEGATRON_ROOT=/opt/Megatron-LM
@@ -56,3 +56,5 @@ The two-update demo uses four distinct queries per update and eight trajectories
 Learning rate is 4e-6, Adam betas (0.9, 0.98), weight decay 0.1 and clipping 0.2. Tools/condensation outputs are excluded from the solver token loss.
 
 CPU tests check scheduling, rewards and artifact handling. This curated release has not been launched for a new GPU training run.
+
+The demo uses the eight training tasks in `examples/financialstatements1`. To use the second family, set `RSI_DATASET_ROOT` to `examples/financialstatements2`, use that same dataset root for the controller, and point a copy of the training profile at `examples/financialstatements2/manifests/train-schedule.jsonl`.

@@ -6,7 +6,7 @@
 
 **English** · [简体中文](README.zh-CN.md)
 
-[Citation](#citation) · [Quick start](#quick-start) · [Explore the 10 tasks](examples/dcf/tasks/) · [Generate challenges](generation/README.md) · [Train the agent](training/README.md)
+[Citation](#citation) · [Quick start](#quick-start) · [Explore the 20 tasks](examples/README.md) · [Generate challenges](generation/README.md) · [Train the agent](training/README.md)
 
 **The model helps create the challenges it learns from.**
 
@@ -18,7 +18,7 @@ Start with a complete financial model. Let the agent build or repair it. Use wha
 | --- | --- | --- |
 | Construct modeling and debugging tasks from complete workbooks. | Read successful trajectories to harden tasks; review failures to identify task issues. | Train on the model's own tool interactions with executable rewards. |
 
-The default target model is **Qwen3.6-27B**, running through **OpenHands**. This repository includes the generation, evaluation, and training code, plus a complete **DCF workbook and 10 tasks** to explore.
+The default target model is **Qwen3.6-27B**, running through **OpenHands**. This repository includes the generation, evaluation, and training code, plus **two financial-statements workbooks and 20 tasks** to explore.
 
 ## How it works
 
@@ -26,18 +26,18 @@ The default target model is **Qwen3.6-27B**, running through **OpenHands**. This
 2. **Evolve challenging tasks.** Construct modeling or debugging tasks, check their executable artifacts, and solve them in fresh contexts. Successful trajectories guide hardening; failed checks and solver-failure reviews guide reconstruction or revision. Reviewed valid challenges are accepted.
 3. **Learn from self-generated experience.** Collect tool-use trajectories on the accepted tasks and optimize the model with binary task rewards. Synchronous sampling keeps every training batch aligned with the current policy.
 
-The included DCF workbook is already prepared and can be used directly for generation. The same-model cleaning and verification pipeline is available for new source workbooks.
+The two included financial-statements workbooks are already prepared and can be used directly for generation. The same-model cleaning and verification pipeline is available for new source workbooks.
 
-## One workbook. Two kinds of challenge.
+## Two workbooks. Twenty challenges.
 
-The example company, **Aster Vale Products**, has six connected worksheets: assumptions, income statement, balance sheet, cash flow, calculation schedules, and DCF valuation. Try either side of the problem:
+Explore two fictional companies through linked income statements, balance sheets, cash flows, operating drivers and segment schedules. Each source includes **five modeling tasks and five debugging tasks**:
 
-| Task | What the agent does | Open an example |
-| --- | --- | --- |
-| **Modeling** · 5 tasks | Complete missing forecast calculations, depreciation schedules, and debt-sweep logic so the model works end to end. | [Read the modeling task](examples/dcf/tasks/dcf-modeling-001/instruction.md) |
-| **Debugging** · 5 tasks | Find and repair formula errors while preserving the model's assumptions and structure. | [Read the debugging task](examples/dcf/tasks/dcf-debugging-001/instruction.md) |
+| Source | Complete workbook | Modeling tasks | Debugging tasks |
+| --- | --- | --- | --- |
+| **financialstatements1** | [Workbook](examples/financialstatements1/reference.xlsx) | [Browse 5 tasks](examples/financialstatements1/tasks/) | [Read a debugging task](examples/financialstatements1/tasks/financialstatements1-debugging-001/instruction.md) |
+| **financialstatements2** | [Workbook](examples/financialstatements2/reference.xlsx) | [Browse 5 tasks](examples/financialstatements2/tasks/) | [Read a debugging task](examples/financialstatements2/tasks/financialstatements2-debugging-001/instruction.md) |
 
-Every task includes an input workbook, instructions, a reference solution, and a fixed verifier. [Browse the example data →](examples/dcf/README.md)
+Every task includes an input workbook, instructions, a reference solution, and a fixed verifier. [Browse the example data →](examples/README.md)
 
 ## Repository contents
 
@@ -46,7 +46,7 @@ Every task includes an input workbook, instructions, a reference solution, and a
 | `generation/` | Cleaning, verification, task construction, hardening, and review | [Generation](generation/README.md) |
 | `evaluation/` | Independent Harbor evaluation and reporting | [Evaluation](evaluation/README.md) |
 | `training/` | Synchronous GRPO, pinned runtime adapters, and training configurations | [Training](training/README.md) |
-| `examples/dcf/` | One complete source workbook and 5 modeling + 5 debugging tasks | [Example data](examples/dcf/README.md) |
+| `examples/` | Two prepared workbooks and 10 modeling + 10 debugging tasks | [Example data](examples/README.md) |
 | `results/` | Main-paper learning-curve and generation-progress summaries | [Results](results/README.md) |
 | `scripts/` | Source registration, query scheduling, controller setup, and release validation | [Scripts](scripts/) |
 
@@ -89,17 +89,17 @@ The generation pipeline uses `OPENAI_*`; standalone Harbor/OpenHands evaluation 
 
 ### 4. Generate or evaluate tasks
 
-Register the prepared DCF workbook and start a new modeling task:
+Register the first prepared financial-statements workbook and start a new modeling task:
 
 ```bash
 python scripts/import_prepared_source.py
-rsi-generate --root generation --harness openhands run dcf-new-modeling-001 \
-  --source dcf-example --type modeling --reuse-source
+rsi-generate --root generation --harness openhands run financialstatements1-new-modeling-001 \
+  --source financialstatements1-example --type modeling --reuse-source
 ```
 
 Use `--type debugging` for formula-repair tasks. See the [generation guide](generation/README.md) for cleaning new workbooks, resuming runs, and exporting accepted tasks.
 
-Evaluate the ten included tasks:
+Evaluate the twenty included tasks:
 
 ```bash
 rsi-eval --root evaluation --config configs/openhands.json
@@ -113,16 +113,14 @@ Follow the [training guide](training/README.md) to prepare the controller, model
 
 | Configuration | Updates | Queries per update | Trajectories per query |
 | --- | ---: | ---: | ---: |
-| [DCF demo](training/configs/demo.json) | 2 | 4 | 8 |
+| [Financial-statements demo](training/configs/demo.json) | 2 | 4 | 8 |
 | [Paper setting](training/configs/paper.json) | 8 | 32 | 8 |
 
 The retained distributed launcher uses six eight-GPU nodes. The demo reduces the dataset and update count while retaining that topology. The paper setting requires the full authorized dataset supplied separately.
 
 ## Example data and experimental scope
 
-The DCF example contains six worksheets covering linked financial statements, depreciation and amortization, debt sweep, and valuation. Its fictional company and synthetic business values support inspecting the complete task format and running the pipeline.
-
-The ten tasks have an **8-task training / 2-task validation** demonstration split. The paper evaluates 110 tasks from 11 source workbooks, with an **88/22** RL split. The released subset supports method exploration; reproducing the full training result requires the complete dataset and model access. Historical preparation sessions, model weights, and training checkpoints are not bundled.
+Each released source has seven worksheets and ten tasks, with an **8-task training / 2-task validation** demonstration split: **16 training and 4 validation tasks** across both sources. The training demo defaults to `financialstatements1`; evaluation configurations include both families. The paper evaluates 110 tasks from 11 source workbooks, with an **88/22** RL split. The released examples support method exploration; reproducing the full training result requires the complete dataset and model access. Historical preparation sessions, model weights, and training checkpoints are not bundled.
 
 ## Development
 

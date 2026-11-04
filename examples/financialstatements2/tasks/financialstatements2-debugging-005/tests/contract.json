@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "scoring": "target_cells",
+  "targets_file": "targets.json",
+  "outside_target_differences": "diagnostic_only",
+  "numeric_decimals": 2,
+  "rounding": "ROUND_HALF_UP",
+  "reward": "binary",
+  "recalculation_timeout_sec": 120
+}

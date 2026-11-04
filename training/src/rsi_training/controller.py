@@ -102,7 +102,7 @@ class Controller:
                 write_json(folder / 'state.json', state)
                 source = verify_task(self.root, body['task_id'], body.get('split', 'train'))
                 original = tree_hash(source)
-                snapshot = folder / 'examples/dcf' / body['task_id']
+                snapshot = folder / 'tasks' / body['task_id']
                 shutil.copytree(source, snapshot)
                 from .verifier_retry import install, VERIFIER_WALL_SECONDS
                 install(snapshot)

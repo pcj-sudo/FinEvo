@@ -6,7 +6,7 @@
   "save_only_final": false,
   "timeout_seconds": 172800,
   "min_controller_concurrency": 64,
-  "prompt_manifest": "examples/dcf/manifests/train-schedule.jsonl",
+  "prompt_manifest": "examples/financialstatements1/manifests/train-schedule.jsonl",
   "min_checkpoint_free_gib": 0,
   "checkpoint_interval_steps": 1,
   "repeat_policy": null

@@ -11,7 +11,10 @@
   ],
   "datasets": [
     {
-      "path": "../examples/dcf/tasks"
+      "path": "../examples/financialstatements1/tasks"
+    },
+    {
+      "path": "../examples/financialstatements2/tasks"
     }
   ],
   "environment": {
