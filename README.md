@@ -1,6 +1,6 @@
 # FinEvo
 
-![FinEvo same-model RSI: prepare workbooks, evolve challenges, learn from experience, and repeat.](assets/readme/workflow-3d.en.gif)
+![FinEvo same-model RSI: prepare workbooks, evolve challenges, learn from experience, and repeat.](assets/readme/workflow-3d-single.en.gif)
 
 **Self-Generated Challenging Tasks for Recursive Self-Improvement of Financial Spreadsheet Agents**
 
