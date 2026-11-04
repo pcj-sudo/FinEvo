@@ -1,6 +1,6 @@
 # FinEvo
 
-![FinEvo 同模型 RSI 动态循环：准备题源、演化挑战、从自身经验中学习，再进入下一轮。](assets/readme/workflow-3d-flow.zh.gif)
+![FinEvo 同模型 RSI 动态循环：准备题源、演化挑战、从自身经验中学习，再进入下一轮。](assets/readme/workflow-3d-orbit.zh.gif)
 
 **面向金融表格智能体递归自我改进的自生成挑战性任务**
 
