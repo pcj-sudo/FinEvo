@@ -1,6 +1,6 @@
 # FinEvo
 
-![FinEvo：让模型创造下一道挑战，再从挑战中学会更多](assets/readme/hero.zh-CN.png)
+![FinEvo 同模型 RSI 动态循环：准备题源、演化挑战、从自身经验中学习，再进入下一轮。](assets/readme/workflow.zh.gif)
 
 **面向金融表格智能体递归自我改进的自生成挑战性任务**
 

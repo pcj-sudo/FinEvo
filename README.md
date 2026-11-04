@@ -1,6 +1,6 @@
 # FinEvo
 
-![FinEvo — Create the next challenge. Then learn from it.](assets/readme/hero.en.png)
+![FinEvo same-model RSI: prepare workbooks, evolve challenges, learn from experience, and repeat.](assets/readme/workflow.en.gif)
 
 **Self-Generated Challenging Tasks for Recursive Self-Improvement of Financial Spreadsheet Agents**
 
