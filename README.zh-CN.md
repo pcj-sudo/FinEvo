@@ -6,7 +6,7 @@
 
 [English](README.md) · **简体中文**
 
-[阅读论文（PDF）](paper/FinEvo.pdf) · [快速开始](#快速开始) · [浏览 10 道任务](examples/dcf/tasks/) · [自主造题](generation/README.md) · [训练智能体](training/README.md)
+[引用](#引用) · [快速开始](#快速开始) · [浏览 10 道任务](examples/dcf/tasks/) · [自主造题](generation/README.md) · [训练智能体](training/README.md)
 
 **让模型参与创造自己接下来要学习的挑战。**
 
@@ -134,6 +134,20 @@ PYTHONPATH=generation/src:generation/tests:training/src:evaluation/src \
 ```
 
 GitHub Actions 模板位于 [ci/checks.yml](ci/checks.yml)。启用时，使用具备工作流管理权限的凭据将其复制到 `.github/workflows/`。
+
+## 引用
+
+如果你的研究使用了 FinEvo，请引用：
+
+```bibtex
+@misc{pan2026finevo,
+  title  = {FinEvo: Self-Generated Challenging Tasks for Recursive Self-Improvement of Financial Spreadsheet Agents},
+  author = {Pan, Chengjun and Liu, Shichun and Lin, Jiahang and Zhou, Zekai and Gui, Tao},
+  year   = {2026},
+  note   = {Preprint},
+  url    = {https://github.com/pcj-sudo/FinEvo}
+}
+```
 
 ## 许可证
 

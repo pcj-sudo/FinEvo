@@ -6,7 +6,7 @@
 
 **English** · [简体中文](README.zh-CN.md)
 
-[Read the paper (PDF)](paper/FinEvo.pdf) · [Quick start](#quick-start) · [Explore the 10 tasks](examples/dcf/tasks/) · [Generate challenges](generation/README.md) · [Train the agent](training/README.md)
+[Citation](#citation) · [Quick start](#quick-start) · [Explore the 10 tasks](examples/dcf/tasks/) · [Generate challenges](generation/README.md) · [Train the agent](training/README.md)
 
 **The model helps create the challenges it learns from.**
 
@@ -134,6 +134,20 @@ PYTHONPATH=generation/src:generation/tests:training/src:evaluation/src \
 ```
 
 A GitHub Actions template is provided at [ci/checks.yml](ci/checks.yml). To enable it, copy it into `.github/workflows/` with credentials permitted to manage workflows.
+
+## Citation
+
+If you use FinEvo in your research, please cite:
+
+```bibtex
+@misc{pan2026finevo,
+  title  = {FinEvo: Self-Generated Challenging Tasks for Recursive Self-Improvement of Financial Spreadsheet Agents},
+  author = {Pan, Chengjun and Liu, Shichun and Lin, Jiahang and Zhou, Zekai and Gui, Tao},
+  year   = {2026},
+  note   = {Preprint},
+  url    = {https://github.com/pcj-sudo/FinEvo}
+}
+```
 
 ## License
 
