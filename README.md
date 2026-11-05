@@ -69,6 +69,7 @@ python -m pip install -r generation/requirements-openhands.txt
 ### 2. Validate the example
 
 ```bash
+find examples -type f -name '*.sh' -exec chmod +x {} +
 python scripts/validate_release.py
 ```
 

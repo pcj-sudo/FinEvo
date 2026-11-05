@@ -20,7 +20,20 @@ def tracked_files():
             and not any(x in p.relative_to(ROOT).parts for x in ['runs','private','checkpoints','preserved-models'])
             and not (len(p.relative_to(ROOT).parts)>1 and p.relative_to(ROOT).parts[:2] in [('generation','workspace'),('generation','state'),('generation','sources')])]
 
+def validate_checksums(root, frozen):
+    changed=sorted(f for f,h in frozen.items() if sha(root/f)!=h)
+    if not changed:return []
+    # Anonymous mirrors rewrite citation/identity text in the two root READMEs.
+    # Every source file, task artifact and other document remains hash-checked.
+    allowed={'README.md','README.zh-CN.md'}
+    assert set(changed)<=allowed,('release file checksum changed',changed)
+    for f in changed:
+        text=(root/f).read_text()
+        assert re.search(r'author\s*=\s*\{(?:Anonymous\b|XXXX\b)',text,re.I),('unexplained README change',f)
+    return changed
+
 def main():
+    anonymous_readme_changes=[]
     families=['financialstatements1','financialstatements2']
     all_tasks=[]
     for family in families:
@@ -86,11 +99,12 @@ def main():
     if current.exists():
         frozen=json.loads(current.read_text())['files']
         assert set(frozen)=={str(p.relative_to(ROOT)) for p in files if p!=current},'release file set changed'
-        assert all(sha(ROOT/f)==h for f,h in frozen.items()),'release file checksum changed'
+        anonymous_readme_changes=validate_checksums(ROOT,frozen)
     print(json.dumps({'status':'passed','tasks':len(all_tasks),'modeling':10,'debugging':10,'source_families':len(families),
                       'train':16,'validation':4,'xlsx_files':len(list((ROOT/'examples').rglob('*.xlsx'))),
                       'python_files':sum(p.suffix=='.py' for p in files),'frozen_task_hashes_verified':True,
                       'strict_sync_config_verified':True,'private_content_scan':'passed',
+                      'anonymous_readme_changes':anonymous_readme_changes,
                       'models_workbook_recalculation_gpu':False},indent=2))
 
 if __name__=='__main__':main()
