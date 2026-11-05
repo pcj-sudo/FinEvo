@@ -141,7 +141,7 @@ If you use FinEvo in your research, please cite:
 ```bibtex
 @misc{pan2026finevo,
   title  = {FinEvo: Self-Generated Challenging Tasks for Recursive Self-Improvement of Financial Spreadsheet Agents},
-  author = {Pan, Chengjun and Liu, Shichun and Lin, Jiahang and Zhou, Zekai and Zhu, Dingwei and Gui, Tao},
+  author = {Pan, Chengjun and Liu, Shichun and Lin, Jiahang and Zhou, Zekai and Zhu, Dingwei and Dou, Shihan and Gui, Tao},
   year   = {2026},
   note   = {Preprint},
   url    = {https://github.com/pcj-sudo/FinEvo}
