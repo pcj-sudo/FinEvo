@@ -6,7 +6,7 @@
 
 [English](README.md) · **简体中文**
 
-[引用](#引用) · [快速开始](#快速开始) · [浏览 20 道任务](examples/README.md) · [自主造题](generation/README.md) · [训练智能体](training/README.md)
+[论文](https://arxiv.org/abs/2611.28239) · [引用](#引用) · [快速开始](#快速开始) · [浏览 20 道任务](examples/README.md) · [自主造题](generation/README.md) · [训练智能体](training/README.md)
 
 **让模型参与创造自己接下来要学习的挑战。**
 
@@ -140,11 +140,13 @@ GitHub Actions 模板位于 [ci/checks.yml](ci/checks.yml)。启用时，使用�
 
 ```bibtex
 @misc{pan2026finevo,
-  title  = {FinEvo: Self-Generated Challenging Tasks for Recursive Self-Improvement of Financial Spreadsheet Agents},
-  author = {Pan, Chengjun and Liu, Shichun and Lin, Jiahang and Zhou, Zekai and Zhu, Dingwei and Dou, Shihan and Gui, Tao},
-  year   = {2026},
-  note   = {Preprint},
-  url    = {https://github.com/pcj-sudo/FinEvo}
+  title         = {{FinEvo}: Recursive Self-Improvement for Long-Horizon Financial Modeling},
+  author        = {Pan, Chengjun and Liu, Shichun and Zhou, Zekai and Dou, Shihan and Lin, Jiahang and Huang, Chengsong and Zhu, Dingwei and Gui, Tao},
+  year          = {2026},
+  eprint        = {2611.28239},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2611.28239}
 }
 ```
 

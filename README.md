@@ -2,11 +2,11 @@
 
 ![FinEvo same-model RSI: prepare workbooks, evolve challenges, learn from experience, and repeat.](assets/readme/workflow-3d.en.gif)
 
-**Self-Generated Challenging Tasks for Recursive Self-Improvement of Financial Spreadsheet Agents**
+**Recursive Self-Improvement for Long-Horizon Financial Modeling**
 
 **English** · [简体中文](README.zh-CN.md)
 
-[Citation](#citation) · [Quick start](#quick-start) · [Explore the 20 tasks](examples/README.md) · [Generate challenges](generation/README.md) · [Train the agent](training/README.md)
+[Paper](https://arxiv.org/abs/2611.28239) · [Citation](#citation) · [Quick start](#quick-start) · [Explore the 20 tasks](examples/README.md) · [Generate challenges](generation/README.md) · [Train the agent](training/README.md)
 
 **The model helps create the challenges it learns from.**
 
@@ -140,11 +140,13 @@ If you use FinEvo in your research, please cite:
 
 ```bibtex
 @misc{pan2026finevo,
-  title  = {FinEvo: Self-Generated Challenging Tasks for Recursive Self-Improvement of Financial Spreadsheet Agents},
-  author = {Pan, Chengjun and Liu, Shichun and Lin, Jiahang and Zhou, Zekai and Zhu, Dingwei and Dou, Shihan and Gui, Tao},
-  year   = {2026},
-  note   = {Preprint},
-  url    = {https://github.com/pcj-sudo/FinEvo}
+  title         = {{FinEvo}: Recursive Self-Improvement for Long-Horizon Financial Modeling},
+  author        = {Pan, Chengjun and Liu, Shichun and Zhou, Zekai and Dou, Shihan and Lin, Jiahang and Huang, Chengsong and Zhu, Dingwei and Gui, Tao},
+  year          = {2026},
+  eprint        = {2611.28239},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2611.28239}
 }
 ```
 
